@@ -27,9 +27,13 @@ class MenuManagement:
             print(f"{checkMenuItem} is not available in the menu.")
 
     def ViewMenu(self):
-        print("==========Available Items In The Menu==========")
-        for index, name in enumerate(self.menu, start=1):
-            print(f"{index}. {name}")
+        if not self.menu:
+            print("No items in the menu.")
+        else:
+            print("==========Available Items In The Menu==========")
+            for index, name in enumerate(self.menu, start=1):
+                print(f"{index}. {name}")
+
     def End(self):
         print("==========Available Items In The Menu==========")
         for index, name in enumerate(self.menu, start=1):
@@ -37,11 +41,32 @@ class MenuManagement:
         exit()
 
     def ViewOptions(self):
-        print("1.View Menu.")
-        print("2.Add Items To Menu.")
-        print("3.Remove Items From The Menu.")
-        print("4.Check if Item is in menu or Not.")
-        print("5.End")
-        operation = int("Enter The operation To Perform = ")
+        while True:
+            try :
+                print("1.View Menu.")
+                print("2.Add Items To Menu.")
+                print("3.Remove Items From The Menu.")
+                print("4.Check if Item is in menu or Not.")
+                print("5.End")
+                operation = int("Enter The operation To Perform = ")
+                match operation:
+                    case 1 :
+                        self.ViewMenu()
+                    case 2:
+                        self.AddToMenu()
+                    case 3:
+                        self.DeleteFromMenu()
+                    case 4:
+                        self.CheckMenuAvailableOrNot()
+                    case 5:
+                        self.End()
+                    case _ :
+                        print("Invalid option. Please try again.")
+            except ValueError:
+                print("Invalid input! Please enter a number between 1 and 5.")
 
-menu = MenuManagement()
+
+
+object = MenuManagement()
+
+
