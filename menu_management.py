@@ -7,7 +7,7 @@ class MenuManagement:
         print("==========Available Items In The Menu==========")
         for index, name in enumerate(self.menu, start=1):
             print(f"{index}. {name}")
-
+        print("=====")
     def DeleteFromMenu(self):
         print("=======Available Items In Menu Are=======")
         for index, name in enumerate(self.menu, start=1):
@@ -35,20 +35,26 @@ class MenuManagement:
                 print(f"{index}. {name}")
 
     def End(self):
-        print("==========Available Items In The Menu==========")
-        for index, name in enumerate(self.menu, start=1):
-            print(f"{index}. {name}")
+        if not self.menu:
+            print("Menu is empty.")
+        else:
+            print("==========Available Items In The Menu==========")
+            for index, name in enumerate(self.menu, start=1):
+                print(f"{index}. {name}")
         exit()
 
     def ViewOptions(self):
         while True:
             try :
+                print("====================================================")
                 print("1.View Menu.")
                 print("2.Add Items To Menu.")
                 print("3.Remove Items From The Menu.")
                 print("4.Check if Item is in menu or Not.")
                 print("5.End")
-                operation = int("Enter The operation To Perform = ")
+                print("====================================================")
+
+                operation = int(input("Enter The operation To Perform = "))
                 match operation:
                     case 1 :
                         self.ViewMenu()
@@ -68,5 +74,5 @@ class MenuManagement:
 
 
 object = MenuManagement()
-
+object.ViewOptions()
 
