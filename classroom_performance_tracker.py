@@ -1,7 +1,5 @@
 
-
 print("==========Classroom Performance Tracker==========")
-
 class ClassroomPerformanceTracker:
     students = {}
 
@@ -53,7 +51,6 @@ class ClassroomPerformanceTracker:
     def ViewOptions(self):
         while True:
             try:
-                self.clear_screen()  # Clear the screen at the beginning of each option
                 print("================================")
                 print("1. Add Student")
                 print("2. View Students")
