@@ -3,7 +3,7 @@ class Ecommerce:
     total = 0
 
     def AddCard(self):
-        newCart = input("Enter the Cart Name You Want to Add = ")
+        newCart = input("Enter the Cart Name You Wantt to Add = ")
         newCartPrice = int(input(f"Enter cost of {newCart} = "))
         self.Cart[newCart] = newCartPrice
 
